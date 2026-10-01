@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3840 2160" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bg" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#08142c"/>
+      <stop offset="45%" stop-color="#040a17"/>
+      <stop offset="100%" stop-color="#010409"/>
+    </radialGradient>
+
+    <!-- Neon Glow Filters -->
+    <filter id="glow-cyan" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="18" result="blur2"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="35" result="blur3"/>
+      <feMerge>
+        <feMergeNode in="blur3"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glow-soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+
+    <!-- Grid Pattern -->
+    <pattern id="cyberGrid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#0055ff" stroke-width="1" stroke-opacity="0.07"/>
+      <circle cx="80" cy="80" r="1.5" fill="#00d4ff" fill-opacity="0.2"/>
+    </pattern>
+  </defs>
+
+  <style>
+    .code-text {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Ubuntu Mono', monospace;
+      font-size: 19px;
+      letter-spacing: 2px;
+      user-select: none;
+    }
+  </style>
+
+  <!-- Deep Dark Blue Canvas -->
+  <rect width="3840" height="2160" fill="url(#bg)"/>
+
+  <!-- Perspective Floor Grid -->
+  <rect width="3840" height="2160" fill="url(#cyberGrid)"/>
+
+  <!-- Ambient Blue Lighting -->
+  <circle cx="1920" cy="1080" r="750" fill="#0066ff" opacity="0.12" filter="url(#glow-soft)"/>
+  <circle cx="1920" cy="1080" r="380" fill="#00f0ff" opacity="0.08" filter="url(#glow-soft)"/>
+  <circle cx="600" cy="300" r="450" fill="#0033aa" opacity="0.08" filter="url(#glow-soft)"/>
+  <circle cx="3200" cy="1800" r="500" fill="#002288" opacity="0.1" filter="url(#glow-soft)"/>
+
+  <!-- Background Code Streams (Left Side) -->
+  <g fill="#00b4d8" opacity="0.22" class="code-text">
+    <text x="140" y="320">01  #include &lt;linux/kernel.h&gt;</text>
+    <text x="140" y="360">02  #include &lt;ubuntu/core.h&gt;</text>
+    <text x="140" y="400">03  </text>
+    <text x="140" y="440">04  struct SystemState {</text>
+    <text x="140" y="480">05      uint64_t uptime;</text>
+    <text x="140" y="520">06      bool neon_engine = true;</text>
+    <text x="140" y="560">07      char *status = "SYNCHRONIZED";</text>
+    <text x="140" y="600">08  };</text>
+    <text x="140" y="640">09  </text>
+    <text x="140" y="680">10  int init_cyber_matrix(void) {</text>
+    <text x="140" y="720">11      printf("[OK] Initializing Ubuntu Core...\n");</text>
+    <text x="140" y="760">12      return 0x7F_UBUNTU;</text>
+    <text x="140" y="800">13  }</text>
+  </g>
+
+  <!-- Background Binary & Hex Streams (Right Side) -->
+  <g fill="#0077b6" opacity="0.18" class="code-text" text-anchor="end">
+    <text x="3700" y="320">0x75 0x62 0x75 0x6E 0x74 0x75</text>
+    <text x="3700" y="360">01110101 01100010 01110101</text>
+    <text x="3700" y="400">01101110 01110100 01110101</text>
+    <text x="3700" y="440">[SYS_RDY] CORE::SYS_INIT</text>
+    <text x="3700" y="480">0x00F0FF // NEON_CYAN_ACK</text>
+    <text x="3700" y="520">MEM_ALLOC :: 0x8849F200A</text>
+  </g>
+
+  <!-- Tech Accent Framing & Crosshairs -->
+  <g stroke="#00f0ff" stroke-width="1.5" opacity="0.4">
+    <!-- Top-Left Bracket -->
+    <path d="M 80 140 L 80 80 L 140 80" fill="none"/>
+    <text x="95" y="110" fill="#00f0ff" class="code-text" font-size="12" opacity="0.6">SYS.NODE // 01</text>
+
+    <!-- Top-Right Bracket -->
+    <path d="M 3760 140 L 3760 80 L 3700 80" fill="none"/>
+    
+    <!-- Bottom-Left Bracket -->
+    <path d="M 80 2020 L 80 2080 L 140 2080" fill="none"/>
+    <text x="80" y="2115" fill="#00f0ff" class="code-text" font-size="14" opacity="0.5">$ sudo apt update &amp;&amp; sudo apt-get --neon-stream</text>
+
+    <!-- Bottom-Right Bracket -->
+    <path d="M 3760 2020 L 3760 2080 L 3700 2080" fill="none"/>
+  </g>
+
+  <!-- Center HUD Circle Accent Rings -->
+  <g transform="translate(1920, 1080)">
+    <!-- Outer Dashed Ring -->
+    <circle cx="0" cy="0" r="320" fill="none" stroke="#0055ff" stroke-width="1.5" stroke-dasharray="8 12" opacity="0.4"/>
+    <circle cx="0" cy="0" r="280" fill="none" stroke="#00d4ff" stroke-width="1" stroke-dasharray="160 40 80 40" opacity="0.3"/>
+    <circle cx="0" cy="0" r="250" fill="none" stroke="#00f0ff" stroke-width="0.7" opacity="0.2"/>
+
+    <!-- Subtle HUD Ticks -->
+    <line x1="-330" y1="0" x2="-310" y2="0" stroke="#00f0ff" stroke-width="2" opacity="0.6"/>
+    <line x1="310" y1="0" x2="330" y2="0" stroke="#00f0ff" stroke-width="2" opacity="0.6"/>
+    <line x1="0" y1="-330" x2="0" y2="-310" stroke="#00f0ff" stroke-width="2" opacity="0.6"/>
+    <line x1="0" y1="310" x2="0" y2="330" stroke="#00f0ff" stroke-width="2" opacity="0.6"/>
+  </g>
+
+  <!-- Central Glowing Neon Ubuntu Logo -->
+  <g transform="translate(1920, 1080)" filter="url(#glow-cyan)">
+    <!-- Main Center Segmented Ring -->
+    <!-- Top-Right Arc -->
+    <path d="M 45 -143 A 150 150 0 0 1 143 45" fill="none" stroke="#00f0ff" stroke-width="28" stroke-linecap="round"/>
+    <!-- Bottom-Right Arc -->
+    <path d="M 125 83 A 150 150 0 0 1 -45 143" fill="none" stroke="#00d4ff" stroke-width="28" stroke-linecap="round"/>
+    <!-- Left Arc -->
+    <path d="M -143 -45 A 150 150 0 0 1 -60 -137" fill="none" stroke="#0088ff" stroke-width="28" stroke-linecap="round"/>
+
+    <!-- Nodes / People Dots -->
+    <!-- Node 1 (Left) -->
+    <circle cx="-168" cy="0" r="26" fill="#020817" stroke="#00f0ff" stroke-width="9"/>
+    <circle cx="-168" cy="0" r="10" fill="#00f0ff"/>
+
+    <!-- Node 2 (Top Right) -->
+    <circle cx="84" cy="-145" r="26" fill="#020817" stroke="#00f0ff" stroke-width="9"/>
+    <circle cx="84" cy="-145" r="10" fill="#00f0ff"/>
+
+    <!-- Node 3 (Bottom Right) -->
+    <circle cx="84" cy="145" r="26" fill="#020817" stroke="#00aaff" stroke-width="9"/>
+    <circle cx="84" cy="145" r="10" fill="#00aaff"/>
+  </g>
+
+  <!-- Center Monospace Tagline -->
+  <text x="1920" y="1460" fill="#00f0ff" class="code-text" font-size="20" font-weight="bold" text-anchor="middle" opacity="0.8" filter="url(#glow-cyan)">
+    UBUNTU // LINUX ENVIRONMENT
+  </text>
+  <text x="1920" y="1495" fill="#0077b6" class="code-text" font-size="13" text-anchor="middle" opacity="0.7">
+    [ SYSTEM ONLINE - KERNEL ARCH 64-BIT ]
+  </text>
+</svg>
