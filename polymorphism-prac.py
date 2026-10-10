@@ -32,3 +32,8 @@ class Pizza(Circle):
         super().__init__(radius)
         self.topping = topping
 
+
+shapes = [Circle(5), Square(4), Triangle(3, 6), Pizza("pepperoni", 10)]  
+
+for shape in shapes:
+    print(f"Area of {shape.__class__.__name__}: {shape.area()}")
