@@ -1,3 +1,9 @@
-num = 5
+num = 8
 
-print("Even" if num % 2 == 0 else "Odd")
+isPrime = True
+
+while isPrime:
+    for i in range(num):
+        if num%i == 0:
+            isPrime = False
+            
