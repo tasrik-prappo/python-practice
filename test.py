@@ -1,9 +1,5 @@
-num = 8
+def get_phone_num(country: int, area: int, first: int, last: int) -> str:
 
-isPrime = True
+    return(f"+{country}-{area}{first}-{last}")
 
-while isPrime:
-    for i in range(num):
-        if num%i == 0:
-            isPrime = False
-            
+print(get_phone_num( area= 1, first= 303, country= 880, last= 943985))
