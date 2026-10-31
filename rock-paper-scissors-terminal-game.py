@@ -34,6 +34,3 @@ while True:
     else:
         print("Invalid input. Game starting again....")
         continue
-
-
-
