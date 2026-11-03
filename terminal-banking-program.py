@@ -2,12 +2,11 @@ def show_balance(balance: float) -> None:
     print(f"Your current balance is ${balance:.2f}")
 
 def deposit() -> float:
-    add_balance: str = input("Enter the ammount: ")
-    add_balance: float = float(add_balance)
+    add_balance: float = float(input("Enter the ammount: "))
 
-    if add_balance < 0:
+    if add_balance <= 0:
         print("Not a valid number")
-        return 0
+        return 0.0
     else:
         return add_balance
 
@@ -16,14 +15,14 @@ def withdraw(current_balance: float) -> float:
     
     if current_balance < amount:
         print("Insufficient balance")
-        return 0
-    elif amount < 0:
+        return 0.0
+    elif amount <= 0:
         print("Amount must be greater than 0")
-        return 0
+        return 0.0
     else:
         return amount
 
-def main():
+def main() -> None:
     balance: float = 0.0
  
 
@@ -55,9 +54,5 @@ def main():
     print("Thank you. Have a nice day")
 
 
-
-
 if __name__ == "__main__":
     main()
-
-
