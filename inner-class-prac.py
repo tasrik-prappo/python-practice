@@ -5,11 +5,11 @@ class Company:
             self.role = role
 
         def show_info(self) -> str:
-            return f"{self.employee_name} {self.role}"  # FIX 1: self.name → self.employee_name
+            return f"{self.employee_name} {self.role}"  
 
     def __init__(self, company_name: str) -> None:
         self.company_name = company_name
-        self.employees: list[Employee] = []
+        self.employees: list[object] = []
 
     def add_employee(self, name: str, role: str) -> None:
         new_employee: Company.Employee = self.Employee(name, role)
